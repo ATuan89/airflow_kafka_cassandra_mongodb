@@ -1,0 +1,27 @@
+[2024-03-29T10:43:00.099+0000] {processor.py:157} INFO - Started process (PID=1410) to work on /opt/airflow/dags/hadoop/producer_test.py
+[2024-03-29T10:43:00.100+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/hadoop/producer_test.py for tasks to queue
+[2024-03-29T10:43:00.101+0000] {logging_mixin.py:151} INFO - [2024-03-29T10:43:00.100+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/hadoop/producer_test.py
+[2024-03-29T10:43:00.127+0000] {logging_mixin.py:151} INFO - [2024-03-29T10:43:00.126+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/hadoop/producer_test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/hadoop/producer_test.py", line 21, in <module>
+    with open('./log/logch.txt', 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: './log/logch.txt'
+[2024-03-29T10:43:00.127+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/hadoop/producer_test.py
+[2024-03-29T10:43:00.143+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/hadoop/producer_test.py took 0.047 seconds
+[2024-03-29T10:43:07.209+0000] {processor.py:157} INFO - Started process (PID=1418) to work on /opt/airflow/dags/hadoop/producer_test.py
+[2024-03-29T10:43:07.210+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/hadoop/producer_test.py for tasks to queue
+[2024-03-29T10:43:07.210+0000] {logging_mixin.py:151} INFO - [2024-03-29T10:43:07.210+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/hadoop/producer_test.py
+[2024-03-29T10:43:07.221+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 08:30:00', 12345, 'click', 'ad123', 'campaign_xyz', 'Google Ads')
+[2024-03-29T10:43:07.221+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 09:15:00', 54321, 'view', 'ad456', 'campaign_abc', 'Facebook Ads')
+[2024-03-29T10:43:07.221+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 10:00:00', 67890, 'click', 'ad789', 'campaign_def', 'Twitter Ads')
+[2024-03-29T10:43:07.221+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 10:30:00', 23456, 'click', 'ad234', 'campaign_xyz', 'Google Ads')
+[2024-03-29T10:43:07.221+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 11:45:00', 67890, 'view', 'ad789', 'campaign_def', 'Twitter Ads')
+[2024-03-29T10:43:07.221+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 12:15:00', 12345, 'click', 'ad123', 'campaign_xyz', 'Google Ads')
+[2024-03-29T10:43:07.222+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 13:00:00', 54321, 'view', 'ad456', 'campaign_abc', 'Facebook Ads')
+[2024-03-29T10:43:07.222+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 14:30:00', 23456, 'click', 'ad234', 'campaign_xyz', 'Google Ads')
+[2024-03-29T10:43:07.222+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 15:45:00', 67890, 'view', 'ad789', 'campaign_def', 'Twitter Ads')
+[2024-03-29T10:43:07.222+0000] {logging_mixin.py:151} INFO - Sent message: ('2024-03-25 16:15:00', 12345, 'click', 'ad123', 'campaign_xyz', 'Google Ads')
