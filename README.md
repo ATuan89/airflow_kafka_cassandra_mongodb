@@ -10,3 +10,10 @@
 # consumer2, producer2 hãy chạy test trên airflow
 
 # tạm thời update code cho hadoop, do còn errors
+# tạm pending hadoop docker nhưng có vẻ lỗi là chủ sở hữu hadoop không phải root nên nó không chạy, ví dụ : 
+
+#	export HDFS_NAMENODE_USER=blossom
+#	export HDFS_DATANODE_USER=blossom
+#	export HDFS_SECONDARYNAMENODE_USER=blossom
+
+# 

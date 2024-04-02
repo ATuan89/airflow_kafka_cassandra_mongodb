@@ -12,11 +12,11 @@ default_args = {
     'retry_delay': timedelta(seconds=5), # retry tasks after 5 seconds 
 }
 
-# Define the DAG
+# Define the DAG 
 dag = DAG(
-    'deploy_project_kafkaHadoop',
+    'deploy_project_kafkaClickhouse',
     default_args=default_args,
-    description='Deploy Java JAR using Airflow',
+    description='Deploy Airflow',
     schedule_interval='30 9 * * *',  # Set schedule interval to run every 10 minutes
     start_date=datetime(2024, 3, 26),  # Set the start date
     catchup=False
@@ -28,17 +28,7 @@ def print_message(message):
 
 # Task to print "Task 1 Executed" when executed
 task1 = BashOperator(
-    task_id='task_1_runConsumer',
-    bash_command='python /opt/airflow/dags/hadoop/consumer.py',
+    task_id='task_Clickhouse_Consumer',
+    bash_command='python /opt/airflow/dags/clickhouse/consumer.py',
     dag=dag
 )
-
-# Task to print "Task 2 Executed" when executed
-task2 = BashOperator(
-    task_id='task_2_runProducer',
-    bash_command='python /opt/airflow/dags/hadoop/producer.py',
-    dag=dag
-)
-
-# Define task dependencies
-task1 >> task2  # task1 should run before task2 and task3

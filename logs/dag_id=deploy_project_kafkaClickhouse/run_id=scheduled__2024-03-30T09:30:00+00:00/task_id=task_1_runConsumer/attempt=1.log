@@ -1,0 +1,150 @@
+[2024-04-01T04:47:15.991+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T04:47:15.998+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T04:47:15.998+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-04-01T04:47:16.008+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): task_1_runConsumer> on 2024-03-30 09:30:00+00:00
+[2024-04-01T04:47:16.012+0000] {standard_task_runner.py:57} INFO - Started process 725 to run task
+[2024-04-01T04:47:16.014+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'deploy_project_kafkaClickhouse', 'task_1_runConsumer', 'scheduled__2024-03-30T09:30:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/executeClickhouse.py', '--cfg-path', '/tmp/tmpjct6_a4z']
+[2024-04-01T04:47:16.015+0000] {standard_task_runner.py:85} INFO - Job 13: Subtask task_1_runConsumer
+[2024-04-01T04:47:16.051+0000] {task_command.py:415} INFO - Running <TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [running]> on host 977df1ccf323
+[2024-04-01T04:47:16.143+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='deploy_project_kafkaClickhouse' AIRFLOW_CTX_TASK_ID='task_1_runConsumer' AIRFLOW_CTX_EXECUTION_DATE='2024-03-30T09:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-30T09:30:00+00:00'
+[2024-04-01T04:47:16.146+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-04-01T04:47:16.147+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/clickhouse/consumer.py']
+[2024-04-01T04:47:16.158+0000] {subprocess.py:86} INFO - Output:
+[2024-04-01T04:47:16.264+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-04-01T04:47:16.264+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/clickhouse/consumer.py", line 2, in <module>
+[2024-04-01T04:47:16.264+0000] {subprocess.py:93} INFO -     from clickhouse_driver import Client
+[2024-04-01T04:47:16.265+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'clickhouse_driver'
+[2024-04-01T04:47:16.267+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-04-01T04:47:16.277+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-04-01T04:47:16.280+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=deploy_project_kafkaClickhouse, task_id=task_1_runConsumer, execution_date=20240330T093000, start_date=20240401T044715, end_date=20240401T044716
+[2024-04-01T04:47:16.291+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 13 for task task_1_runConsumer (Bash command failed. The command returned a non-zero exit code 1.; 725)
+[2024-04-01T04:47:16.306+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-04-01T04:47:16.324+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-01T07:13:48.432+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T07:13:48.438+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T07:13:48.438+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-04-01T07:13:48.446+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): task_1_runConsumer> on 2024-03-30 09:30:00+00:00
+[2024-04-01T07:13:48.450+0000] {standard_task_runner.py:57} INFO - Started process 3161 to run task
+[2024-04-01T07:13:48.453+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'deploy_project_kafkaClickhouse', 'task_1_runConsumer', 'scheduled__2024-03-30T09:30:00+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/executeClickhouse.py', '--cfg-path', '/tmp/tmpy2p_zb82']
+[2024-04-01T07:13:48.454+0000] {standard_task_runner.py:85} INFO - Job 30: Subtask task_1_runConsumer
+[2024-04-01T07:13:48.489+0000] {task_command.py:415} INFO - Running <TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [running]> on host 977df1ccf323
+[2024-04-01T07:13:48.541+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='deploy_project_kafkaClickhouse' AIRFLOW_CTX_TASK_ID='task_1_runConsumer' AIRFLOW_CTX_EXECUTION_DATE='2024-03-30T09:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-30T09:30:00+00:00'
+[2024-04-01T07:13:48.542+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-04-01T07:13:48.542+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/clickhouse/consumer.py']
+[2024-04-01T07:13:48.552+0000] {subprocess.py:86} INFO - Output:
+[2024-04-01T07:16:09.611+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to queued. Terminating instance.
+[2024-04-01T07:16:09.612+0000] {process_utils.py:131} INFO - Sending 15 to group 3161. PIDs of all processes in the group: [3162, 3161]
+[2024-04-01T07:16:09.613+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 3161
+[2024-04-01T07:16:09.613+0000] {taskinstance.py:1630} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-04-01T07:16:09.613+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-04-01T07:16:09.623+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1632, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-04-01T07:16:09.627+0000] {taskinstance.py:1398} INFO - Marking task as UP_FOR_RETRY. dag_id=deploy_project_kafkaClickhouse, task_id=task_1_runConsumer, execution_date=20240330T093000, start_date=, end_date=20240401T071609
+[2024-04-01T07:16:09.635+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 30 for task task_1_runConsumer ((psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "dag_run_dag_id_execution_date_key"
+DETAIL:  Key (dag_id, execution_date)=(deploy_project_kafkaClickhouse, 2024-03-30 09:30:00+00) already exists.
+
+[SQL: INSERT INTO dag_run (id, dag_id, queued_at, execution_date, start_date, end_date, state, run_id, creating_job_id, external_trigger, run_type, conf, data_interval_start, data_interval_end, last_scheduling_decision, dag_hash, log_template_id, updated_at) VALUES (%(id)s, %(dag_id)s, %(queued_at)s, %(execution_date)s, %(start_date)s, %(end_date)s, %(state)s, %(run_id)s, %(creating_job_id)s, %(external_trigger)s, %(run_type)s, %(conf)s, %(data_interval_start)s, %(data_interval_end)s, %(last_scheduling_decision)s, %(dag_hash)s, %(log_template_id)s, %(updated_at)s)]
+[parameters: {'id': 12, 'dag_id': 'deploy_project_kafkaClickhouse', 'queued_at': datetime.datetime(2024, 4, 1, 7, 13, 48, 174286, tzinfo=Timezone('UTC')), 'execution_date': datetime.datetime(2024, 3, 30, 9, 30, tzinfo=Timezone('UTC')), 'start_date': datetime.datetime(2024, 4, 1, 7, 13, 48, 184826, tzinfo=Timezone('UTC')), 'end_date': None, 'state': 'running', 'run_id': 'scheduled__2024-03-30T09:30:00+00:00', 'creating_job_id': 12, 'external_trigger': False, 'run_type': 'scheduled', 'conf': <psycopg2.extensions.Binary object at 0x7f70418a1b40>, 'data_interval_start': datetime.datetime(2024, 3, 30, 9, 30, tzinfo=Timezone('UTC')), 'data_interval_end': datetime.datetime(2024, 3, 31, 9, 30, tzinfo=Timezone('UTC')), 'last_scheduling_decision': datetime.datetime(2024, 4, 1, 7, 13, 48, 252619, tzinfo=Timezone('UTC')), 'dag_hash': 'bfdb14a09be5d39f52c68c28ea16cfa4', 'log_template_id': 2, 'updated_at': datetime.datetime(2024, 4, 1, 7, 13, 48, 254420, tzinfo=Timezone('UTC'))}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 3161)
+[2024-04-01T07:16:09.665+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=3161, status='terminated', exitcode=1, started='07:13:48') (3161) terminated with exit code 1
+[2024-04-01T07:16:09.665+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=3162, status='terminated', started='07:13:48') (3162) terminated with exit code None
+[2024-04-01T07:16:11.135+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T07:16:11.142+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T07:16:11.142+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-04-01T07:16:11.152+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): task_1_runConsumer> on 2024-03-30 09:30:00+00:00
+[2024-04-01T07:16:11.156+0000] {standard_task_runner.py:57} INFO - Started process 3217 to run task
+[2024-04-01T07:16:11.159+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'deploy_project_kafkaClickhouse', 'task_1_runConsumer', 'scheduled__2024-03-30T09:30:00+00:00', '--job-id', '31', '--raw', '--subdir', 'DAGS_FOLDER/executeClickhouse.py', '--cfg-path', '/tmp/tmps1u75t8e']
+[2024-04-01T07:16:11.160+0000] {standard_task_runner.py:85} INFO - Job 31: Subtask task_1_runConsumer
+[2024-04-01T07:16:11.196+0000] {task_command.py:415} INFO - Running <TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [running]> on host 977df1ccf323
+[2024-04-01T07:16:11.251+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='deploy_project_kafkaClickhouse' AIRFLOW_CTX_TASK_ID='task_1_runConsumer' AIRFLOW_CTX_EXECUTION_DATE='2024-03-30T09:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-30T09:30:00+00:00'
+[2024-04-01T07:16:11.252+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-04-01T07:16:11.252+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/clickhouse/consumer.py']
+[2024-04-01T07:16:11.263+0000] {subprocess.py:86} INFO - Output:
+[2024-04-01T07:16:26.294+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2024-04-01T07:16:26.296+0000] {process_utils.py:131} INFO - Sending 15 to group 3217. PIDs of all processes in the group: [3218, 3217]
+[2024-04-01T07:16:26.297+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 3217
+[2024-04-01T07:16:26.297+0000] {taskinstance.py:1630} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-04-01T07:16:26.297+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-04-01T07:16:26.307+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1632, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-04-01T07:16:26.310+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=deploy_project_kafkaClickhouse, task_id=task_1_runConsumer, execution_date=20240330T093000, start_date=20240401T071611, end_date=20240401T071626
+[2024-04-01T07:16:26.320+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 31 for task task_1_runConsumer ((psycopg2.errors.ForeignKeyViolation) insert or update on table "task_fail" violates foreign key constraint "task_fail_ti_fkey"
+DETAIL:  Key (dag_id, task_id, run_id, map_index)=(deploy_project_kafkaClickhouse, task_1_runConsumer, scheduled__2024-03-30T09:30:00+00:00, -1) is not present in table "task_instance".
+
+[SQL: INSERT INTO task_fail (task_id, dag_id, run_id, map_index, start_date, end_date, duration) VALUES (%(task_id)s, %(dag_id)s, %(run_id)s, %(map_index)s, %(start_date)s, %(end_date)s, %(duration)s) RETURNING task_fail.id]
+[parameters: {'task_id': 'task_1_runConsumer', 'dag_id': 'deploy_project_kafkaClickhouse', 'run_id': 'scheduled__2024-03-30T09:30:00+00:00', 'map_index': -1, 'start_date': datetime.datetime(2024, 4, 1, 7, 16, 11, 136124, tzinfo=Timezone('UTC')), 'end_date': datetime.datetime(2024, 4, 1, 7, 16, 26, 309754, tzinfo=Timezone('UTC')), 'duration': 15}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 3217)
+[2024-04-01T07:16:26.349+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=3217, status='terminated', exitcode=1, started='07:16:10') (3217) terminated with exit code 1
+[2024-04-01T07:16:26.349+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=3218, status='terminated', started='07:16:10') (3218) terminated with exit code None
+[2024-04-01T07:18:47.101+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T07:18:47.108+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T07:18:47.108+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-04-01T07:18:47.119+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): task_1_runConsumer> on 2024-03-30 09:30:00+00:00
+[2024-04-01T07:18:47.123+0000] {standard_task_runner.py:57} INFO - Started process 3313 to run task
+[2024-04-01T07:18:47.126+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'deploy_project_kafkaClickhouse', 'task_1_runConsumer', 'scheduled__2024-03-30T09:30:00+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/executeClickhouse.py', '--cfg-path', '/tmp/tmpfkrh_vg5']
+[2024-04-01T07:18:47.127+0000] {standard_task_runner.py:85} INFO - Job 33: Subtask task_1_runConsumer
+[2024-04-01T07:18:47.167+0000] {task_command.py:415} INFO - Running <TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [running]> on host 977df1ccf323
+[2024-04-01T07:18:47.223+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='deploy_project_kafkaClickhouse' AIRFLOW_CTX_TASK_ID='task_1_runConsumer' AIRFLOW_CTX_EXECUTION_DATE='2024-03-30T09:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-30T09:30:00+00:00'
+[2024-04-01T07:18:47.224+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-04-01T07:18:47.224+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/clickhouse/consumer.py']
+[2024-04-01T07:18:47.236+0000] {subprocess.py:86} INFO - Output:
+[2024-04-01T07:21:38.514+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2024-04-01T07:21:38.517+0000] {process_utils.py:131} INFO - Sending 15 to group 3313. PIDs of all processes in the group: [3315, 3313]
+[2024-04-01T07:21:38.517+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 3313
+[2024-04-01T07:21:38.518+0000] {taskinstance.py:1630} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-04-01T07:21:38.518+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-04-01T07:21:38.529+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1632, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-04-01T07:21:38.532+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=deploy_project_kafkaClickhouse, task_id=task_1_runConsumer, execution_date=20240330T093000, start_date=20240401T071847, end_date=20240401T072138
+[2024-04-01T07:21:38.543+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 33 for task task_1_runConsumer ((psycopg2.errors.ForeignKeyViolation) insert or update on table "task_fail" violates foreign key constraint "task_fail_ti_fkey"
+DETAIL:  Key (dag_id, task_id, run_id, map_index)=(deploy_project_kafkaClickhouse, task_1_runConsumer, scheduled__2024-03-30T09:30:00+00:00, -1) is not present in table "task_instance".
+
+[SQL: INSERT INTO task_fail (task_id, dag_id, run_id, map_index, start_date, end_date, duration) VALUES (%(task_id)s, %(dag_id)s, %(run_id)s, %(map_index)s, %(start_date)s, %(end_date)s, %(duration)s) RETURNING task_fail.id]
+[parameters: {'task_id': 'task_1_runConsumer', 'dag_id': 'deploy_project_kafkaClickhouse', 'run_id': 'scheduled__2024-03-30T09:30:00+00:00', 'map_index': -1, 'start_date': datetime.datetime(2024, 4, 1, 7, 18, 47, 102381, tzinfo=Timezone('UTC')), 'end_date': datetime.datetime(2024, 4, 1, 7, 21, 38, 532137, tzinfo=Timezone('UTC')), 'duration': 171}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 3313)
+[2024-04-01T07:21:38.573+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=3315, status='terminated', started='07:18:46') (3315) terminated with exit code None
+[2024-04-01T07:21:38.574+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=3313, status='terminated', exitcode=1, started='07:18:46') (3313) terminated with exit code 1
+[2024-04-01T07:49:01.388+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T07:49:01.396+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [queued]>
+[2024-04-01T07:49:01.396+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 2
+[2024-04-01T07:49:01.408+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): task_1_runConsumer> on 2024-03-30 09:30:00+00:00
+[2024-04-01T07:49:01.413+0000] {standard_task_runner.py:57} INFO - Started process 229 to run task
+[2024-04-01T07:49:01.418+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'deploy_project_kafkaClickhouse', 'task_1_runConsumer', 'scheduled__2024-03-30T09:30:00+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/executeClickhouse.py', '--cfg-path', '/tmp/tmpe9km13ps']
+[2024-04-01T07:49:01.419+0000] {standard_task_runner.py:85} INFO - Job 38: Subtask task_1_runConsumer
+[2024-04-01T07:49:01.475+0000] {task_command.py:415} INFO - Running <TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer scheduled__2024-03-30T09:30:00+00:00 [running]> on host 977df1ccf323
+[2024-04-01T07:49:01.535+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='deploy_project_kafkaClickhouse' AIRFLOW_CTX_TASK_ID='task_1_runConsumer' AIRFLOW_CTX_EXECUTION_DATE='2024-03-30T09:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-03-30T09:30:00+00:00'
+[2024-04-01T07:49:01.536+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-04-01T07:49:01.537+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/clickhouse/consumer.py']
+[2024-04-01T07:49:01.548+0000] {subprocess.py:86} INFO - Output:
+[2024-04-01T08:32:52.612+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to removed. Terminating instance.
+[2024-04-01T08:32:52.615+0000] {process_utils.py:131} INFO - Sending 15 to group 229. PIDs of all processes in the group: [231, 229]
+[2024-04-01T08:32:52.615+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 229
+[2024-04-01T08:32:52.615+0000] {taskinstance.py:1630} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-04-01T08:32:52.616+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2024-04-01T08:32:52.641+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=229, status='terminated', exitcode=0, started='07:49:01') (229) terminated with exit code 0
+[2024-04-01T08:32:52.642+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=231, status='terminated', started='07:49:01') (231) terminated with exit code None

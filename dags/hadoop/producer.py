@@ -1,27 +1,35 @@
-from kafka import KafkaProducer
-import time
+from confluent_kafka import Producer
+import ast
 
-# Kafka broker address
-#bootstrap_servers = '172.18.0.10:19092'
-bootstrap_servers = '172.18.0.10:9092,172.18.0.8:9093,172.18.0.11:9094'
+# Create a Kafka producer
+conf = {'bootstrap.servers': '172.18.0.6:9092,172.18.0.5:9093,172.18.7:9094'}    # for local
+conf2 = {'bootstrap.servers': '172.18.0.6:19092,172.18.0.5:19093,172.18.0.7:19094'}    # for airflow
+producer = Producer(**conf)
 
-# Create Kafka producer
-producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
+# Topic to send messages to
+topic = 'log_data'
 
-# Path to the log file
-log_file_path = '/opt/airflow/dags/hadoop/log/logch.txt'
-log_file_path2 = './log/logch.txt'
+# Function to send a message to Kafka
+def send_message(producer, msg):
+    try:
+        producer.produce(topic, msg.encode('utf-8'))
+    except Exception as e:
+        print(f'Error producing message: {e}')
 
-# Read log file and send each line as a message to Kafka
-with open(log_file_path, 'r') as file:
-    for line in file:        
-        # Parse each line and create a message
-        timestamp, user_id, action, ad_id, campaign_id, platform = line.strip().split(",")
-        message = f"{timestamp},{user_id},{action},{ad_id},{campaign_id},{platform}"
-	
-        producer.send('log_data', message.encode('utf-8'))
-        print(f'Message sent to Kafka topic: {message}')
+# Read data from the file
+log_file_path = '/opt/airflow/dags/log/logch.txt'
+log_file_path2 = '../log/logch.txt'
+with open(log_file_path2, 'r') as file:
+    for line in file:
+        # Parse the tuple from the line
+        try:
+            data_tuple = ast.literal_eval(line.strip())
+            message = str(data_tuple)
+            send_message(producer, message)
+            print(f'Sent message: {message}')
+        except (ValueError, SyntaxError):
+            print(f'Invalid data format: {line.strip()}')
 
-# Close producer
-producer.close()
-print('All data sent to Kafka topic: log_data')
+# Flush any remaining messages
+producer.flush()
+print('All messages sent to Kafka topic: log_data')

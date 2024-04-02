@@ -1,7 +1,8 @@
 from kafka import KafkaConsumer
 from hdfs import InsecureClient
 
-bootstrap_servers = '172.18.0.10:9092,172.18.0.8:9093,172.18.0.11:9094'
+bootstrap_servers = '172.18.0.6:9092,172.18.0.5:9093,172.18.7:9094'  # for local
+bootstrap_servers2 = '172.18.0.6:19092,172.18.0.5:19093,172.18.0.7:19094' # for airflow
 
 consumer = KafkaConsumer('log_data',group_id='grp1', bootstrap_servers=bootstrap_servers)
 consumer.subscribe(['log_data'])

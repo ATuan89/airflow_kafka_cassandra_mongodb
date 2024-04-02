@@ -1,0 +1,8 @@
+[2024-04-01T04:45:40.561+0000] {processor.py:157} INFO - Started process (PID=1488) to work on /opt/airflow/dags/execute copy.py
+[2024-04-01T04:45:40.562+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/execute copy.py for tasks to queue
+[2024-04-01T04:45:40.563+0000] {logging_mixin.py:151} INFO - [2024-04-01T04:45:40.562+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/execute copy.py
+[2024-04-01T04:45:40.574+0000] {processor.py:839} INFO - DAG(s) dict_keys(['deploy_project_kafkaHadoop']) retrieved from /opt/airflow/dags/execute copy.py
+[2024-04-01T04:45:40.682+0000] {logging_mixin.py:151} INFO - [2024-04-01T04:45:40.682+0000] {security.py:708} INFO - Not syncing DAG-level permissions for DAG 'DAG:deploy_project_kafkaHadoop' as access control is unset.
+[2024-04-01T04:45:40.682+0000] {logging_mixin.py:151} INFO - [2024-04-01T04:45:40.682+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-04-01T04:45:40.698+0000] {logging_mixin.py:151} INFO - [2024-04-01T04:45:40.698+0000] {dag.py:3696} INFO - Setting next_dagrun for deploy_project_kafkaHadoop to 2024-03-30T09:30:00+00:00, run_after=2024-03-31T09:30:00+00:00
+[2024-04-01T04:45:40.711+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/execute copy.py took 0.153 seconds

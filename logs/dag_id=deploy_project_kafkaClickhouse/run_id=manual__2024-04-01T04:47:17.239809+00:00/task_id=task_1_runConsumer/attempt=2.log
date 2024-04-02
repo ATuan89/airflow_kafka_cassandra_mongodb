@@ -1,0 +1,26 @@
+[2024-04-01T04:47:24.049+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer manual__2024-04-01T04:47:17.239809+00:00 [queued]>
+[2024-04-01T04:47:24.055+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer manual__2024-04-01T04:47:17.239809+00:00 [queued]>
+[2024-04-01T04:47:24.055+0000] {taskinstance.py:1359} INFO - Starting attempt 2 of 2
+[2024-04-01T04:47:24.065+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): task_1_runConsumer> on 2024-04-01 04:47:17.239809+00:00
+[2024-04-01T04:47:24.069+0000] {standard_task_runner.py:57} INFO - Started process 734 to run task
+[2024-04-01T04:47:24.071+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'deploy_project_kafkaClickhouse', 'task_1_runConsumer', 'manual__2024-04-01T04:47:17.239809+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/executeClickhouse.py', '--cfg-path', '/tmp/tmpxly2sq8d']
+[2024-04-01T04:47:24.072+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask task_1_runConsumer
+[2024-04-01T04:47:24.115+0000] {task_command.py:415} INFO - Running <TaskInstance: deploy_project_kafkaClickhouse.task_1_runConsumer manual__2024-04-01T04:47:17.239809+00:00 [running]> on host 977df1ccf323
+[2024-04-01T04:47:24.180+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='deploy_project_kafkaClickhouse' AIRFLOW_CTX_TASK_ID='task_1_runConsumer' AIRFLOW_CTX_EXECUTION_DATE='2024-04-01T04:47:17.239809+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-04-01T04:47:17.239809+00:00'
+[2024-04-01T04:47:24.181+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-04-01T04:47:24.181+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/clickhouse/consumer.py']
+[2024-04-01T04:47:24.192+0000] {subprocess.py:86} INFO - Output:
+[2024-04-01T04:47:24.296+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-04-01T04:47:24.296+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/clickhouse/consumer.py", line 2, in <module>
+[2024-04-01T04:47:24.296+0000] {subprocess.py:93} INFO -     from clickhouse_driver import Client
+[2024-04-01T04:47:24.297+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'clickhouse_driver'
+[2024-04-01T04:47:24.299+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-04-01T04:47:24.309+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-04-01T04:47:24.312+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=deploy_project_kafkaClickhouse, task_id=task_1_runConsumer, execution_date=20240401T044717, start_date=20240401T044724, end_date=20240401T044724
+[2024-04-01T04:47:24.321+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 16 for task task_1_runConsumer (Bash command failed. The command returned a non-zero exit code 1.; 734)
+[2024-04-01T04:47:24.368+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-04-01T04:47:24.385+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check
